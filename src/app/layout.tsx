@@ -1,21 +1,21 @@
-import { Inter as FontSans} from 'next/font/google'
+import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 
 import "@/styles/globals.css"
 import { siteConfig } from "@/config/site"
-import {cn} from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 // Import optimized fonts (fontSans, fontHeading) -> create CSS vars
 const fontSans = FontSans({
-  subsets: ['latin'],
+  subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap"
+  display: "swap",
 })
 
 const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
-  display: "swap"
+  display: "swap",
 })
 
 interface RootLayoutProps {
@@ -36,7 +36,7 @@ export const metadata = {
     "PaaS",
     "BMS",
     "integration",
-    "building"
+    "building",
   ],
   authors: [
     {
@@ -45,12 +45,12 @@ export const metadata = {
     },
     {
       name: "Eric",
-      url: "https://lsdflksjdfdlf.com", 
+      url: "https://lsdflksjdfdlf.com",
     },
     {
       name: "Adi",
       url: "https://lsdsdfflksjdlf.com",
-    }
+    },
   ],
   creator: "jan",
   /*
@@ -87,14 +87,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable,
-        fontHeading.variable
-      )}>
-        <nav>
-          <p>Navbar</p>
-        </nav>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
         {children}
       </body>
     </html>
