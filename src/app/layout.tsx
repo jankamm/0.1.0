@@ -2,8 +2,8 @@ import { Inter as FontSans} from 'next/font/google'
 import localFont from "next/font/local"
 
 import "@/styles/globals.css"
-import {siteConfig} from "@/config/site"
-import NavBar from '@/components/MainNavBar'
+import { siteConfig } from "@/config/site"
+import {cn} from "@/lib/utils"
 
 // Import optimized fonts (fontSans, fontHeading) -> create CSS vars
 const fontSans = FontSans({
@@ -87,8 +87,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={fontSans.className}>
-        <NavBar />
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable,
+        fontHeading.variable
+      )}>
         <nav>
           <p>Navbar</p>
         </nav>

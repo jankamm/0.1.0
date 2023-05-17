@@ -1,11 +1,11 @@
-import { cva } from "cva";
+import { cva, VariantProps } from "cva"
 
 const button = cva(
     "rounded-md relative", {
         variants: {
-            intent: { //can also change intent here to variant
-                primary: "",
-                secondary: "",
+            variant: { //can also change intent here to variant
+                default: "",
+                outline: "",
                 danger: "",
                 monochrome: "",
             },
@@ -16,12 +16,13 @@ const button = cva(
                 true: "w-full",
             },
         },
-        defaultVariatns: {
-            intent: "primary",
-            fullwidt: false
+        
+        defaultVariants: {
+            variant: "default",
+            fullWidth: false
         },
         compoundVariants: [{
-            intent: "danger",
+            variant: "danger",
             outline: true,
             class: "",
         }]
