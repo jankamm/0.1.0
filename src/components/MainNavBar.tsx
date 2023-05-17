@@ -13,6 +13,7 @@ interface MainNavProps {
 export default function NavBar() {
     return (
         <div>
+            <h1>Title h1</h1>
             <ul>
                 <li>hello</li>
                 <li>assets</li>

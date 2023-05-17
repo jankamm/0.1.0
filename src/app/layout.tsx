@@ -1,11 +1,19 @@
 import { Inter as FontSans} from 'next/font/google'
+import localFont from "next/font/local"
 import { cn } from "cva"
 import '@/styles/globals.css'
 import NavBar from '@/components/MainNavBar.tsx'
 
 const fontSans = FontSans({
   subsets: ['latin'],
-  variable: "--font-sans"
+  variable: "--font-sans",
+  display: "swap"
+})
+
+const fontHeading = localFont({
+  src: "../assets/fonts/CalSans-SemiBold.woff2",
+  variable: "--font-heading",
+  display: "swap"
 })
 
 interface RootLayoutProps {
